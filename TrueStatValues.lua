@@ -74,21 +74,55 @@ local vrs_cnv =     {
   };
 
 local lee_cnv =    {
-    1.683813485,	1.683813485,	1.683813485,	1.683813485,	1.683813485,	--    5
-    1.683813485,	1.683813485,	1.683813485,	1.683813485,	1.683813485,	--   10
-    1.683813485,	1.768004159,	1.852194833,	1.936385507,	2.020576182,	--   15
-    2.104766856,	2.18895753,	2.273148204,	2.357338879,	2.441529553,	--   20
-    2.540594614,	2.645140083,	2.755508553,	2.872066565,	2.995206418,	--   25
-    3.125348137,	3.262941589,	3.408468784,	3.562446361,	3.725428282,	--   30
-    3.898008747,	4.080825358,	4.274562542,	4.479955272,	4.697793097,	--   35
-    4.928924517,	5.174261735,	5.434785813,	5.711552281,	6.005697223,	--   40
-    6.318443906,	6.651109978,	7.005115307,	7.38199051,	7.783386244,	--   45
-    8.211083318,	8.667003719,	9.153222628,	9.67198152,	10.22570246,	--   50
-    10.87430986,	11.56405787,	12.29755599,	13.07757925,	13.90707872,	--   55
-    14.78919261,	15.72725821,	16.72482451,	17.78566556,	21.38926091,	--   60
-    24.5166548,	28.10131519,	32.21010051,	36.91964479,	42.31778696,	--   65
-    48.50520918,	55.59731467,	63.72638012,	73.04402286,	109.9970367,	--   70
+    2.265494507,	2.265494507,	2.265494507,	2.265494507,	2.265494507,	--    5
+    2.265494507,	2.265494507,	2.265494507,	2.265494507,	2.265494507,	--   10
+    2.265494507,	2.378769232,	2.492043957,	2.605318683,	2.718593408,	--   15
+    2.831868133,	2.945142859,	3.058417584,	3.171692309,	3.284967035,	--   20
+    3.418254572,	3.558915748,	3.707411507,	3.864235014,	4.02991409,	--   25
+    4.205013858,	4.390139593,	4.585939818,	4.79310965,	5.012394416,	--   30
+    5.244593588,	5.490565027,	5.751229601,	6.027576184,	6.320667076,	--   35
+    6.631643896,	6.961733971,	7.312257276,	7.684633978,	8.080392628,	--   40
+    8.501179074,	8.948766152,	9.425064231,	9.932132686,	10.4721924,	--   45
+    11.04763937,	11.66105955,	12.31524499,	13.0132115,	13.75821786,	--   50
+    14.63088964,	15.55891422,	16.5458026,	17.59528845,	18.71134227,	--   55
+    19.89818642,	21.16031105,	22.50249115,	23.92980457,	28.77827832,	--   60
+    32.98604464,	37.80904225,	43.33722614,	49.6737039,	56.93665882,	--   65
+    65.26155417,	74.80365974,	85.7409478,	98.27741257,	147.996013,	--   70
   };
+  
+local avd_cnv =    {
+	1.102132463,	1.102132463,	1.102132463,	1.102132463,	1.102132463,	--    5
+    1.102132463,	1.102132463,	1.102132463,	1.102132463,	1.102132463,	--   10
+    1.102132463,	1.157239086,	1.212345709,	1.267452332,	1.322558955,	--   15
+    1.377665578,	1.432772202,	1.487878825,	1.542985448,	1.598092071,	--   20
+    1.662934657,	1.731364418,	1.803605598,	1.879898115,	1.960498747,	--   25
+    2.045682417,	2.135743586,	2.23099775,	2.331783073,	2.438462148,	--   30
+    2.551423907,	2.671085689,	2.797895482,	2.93233436,	3.074919118,	--   35
+    3.226205139,	3.386789499,	3.557314351,	3.738470584,	3.931001819,	--   40
+    4.135708739,	4.353453804,	4.585166382,	4.831848334,	5.094580087,	--   45
+    5.374527263,	5.672947889,	5.991200266,	6.330751541,	6.693187066,	--   50
+    7.117730093,	7.569201514,	8.049309374,	8.559870057,	9.10281516,	--   55
+    9.680198798,	10.29420538,	10.94715786,	11.64152655,	14.00024351,	--   60
+    16.04726496,	18.39358812,	21.08297488,	24.16558568,	27.6989151,	--   65
+    31.74886419,	36.3909696,	41.71181244,	47.81063314,	71.9980604,	--   70
+};
+
+local spd_cnv =     {
+	0.765369766,	0.765369766,	0.765369766,	0.765369766,	0.765369766,	--    5
+    0.765369766,	0.765369766,	0.765369766,	0.765369766,	0.765369766,	--   10
+    0.765369766,	0.803638254,	0.841906742,	0.880175231,	0.918443719,	--   15
+    0.956712207,	0.994980695,	1.033249184,	1.071517672,	1.10978616,	--   20
+    1.154815734,	1.202336401,	1.252503888,	1.305484802,	1.361457463,	--   25
+    1.42061279,	1.483155268,	1.549303993,	1.619293801,	1.693376492,	--   30
+    1.771822158,	1.854920617,	1.942982973,	2.036343305,	2.135360499,	--   35
+    2.240420235,	2.351937152,	2.470357188,	2.596160128,	2.729862374,	--   40
+    2.872019957,	3.023231808,	3.184143321,	3.355450232,	3.537902838,	--   45
+    3.732310599,	3.939547145,	4.16055574,	4.396355237,	4.648046574,	--   50
+    4.94286812,	5.25638994,	5.589798176,	5.944354206,	6.321399417,	--   55
+    6.722360276,	7.148753734,	7.602192957,	8.084393436,	9.722391324,	--   60
+    11.143934,	12.77332508,	14.64095478,	16.78165672,	19.23535771,	--   65
+    22.04782236,	25.27150667,	28.96653642,	33.20182857,	49.99865305,	--   70
+};
 
 function addon.tsv:SetupConversionFactors()
 	local level = UnitLevel("Player");
@@ -98,14 +132,19 @@ function addon.tsv:SetupConversionFactors()
 	addon.HasteConv 	= hst_cnv[level];
 	addon.VersConv 		= vrs_cnv[level];
 	addon.MasteryConv 	= mst_cnv[level];
-	--addon.LeechConv		= lee_cnv[level]*100;
+	addon.LeechConv		= lee_cnv[level];
+	addon.AvoidConv     = avd_cnv[level];
+	addon.SpeedConv     = spd_cnv[level];
 end
 
 local statIdMap = {
-    [CR_CRIT_SPELL]={["conversionFactor"]="CritConv",["rating"]="BaseCritRating"},
-    [CR_HASTE_SPELL]={["conversionFactor"]="HasteConv",["rating"]="BaseHasteRating"},
-    [CR_MASTERY]={["conversionFactor"]="MasteryConv",["rating"]="BaseMasteryRating"},
-    [CR_VERSATILITY_DAMAGE_DONE]={["conversionFactor"]="VersConv",["rating"]="BaseVersatilityRating"}
+    [CR_CRIT_SPELL]={["conversionFactor"]="CritConv",["rating"]="BaseCritRating",["bracket"]="StatBrackets"},
+    [CR_HASTE_SPELL]={["conversionFactor"]="HasteConv",["rating"]="BaseHasteRating",["bracket"]="StatBrackets"},
+    [CR_MASTERY]={["conversionFactor"]="MasteryConv",["rating"]="BaseMasteryRating",["bracket"]="StatBrackets"},
+    [CR_VERSATILITY_DAMAGE_DONE]={["conversionFactor"]="VersConv",["rating"]="BaseVersatilityRating",["bracket"]="StatBrackets"},
+	[CR_LIFESTEAL]={["conversionFactor"]="LeechConv",["rating"]="BaseLeechRating",["bracket"]="TertiaryStatBrackets"},
+	[CR_AVOIDANCE]={["conversionFactor"]="AvoidConv",["rating"]="BaseAvoidanceRating",["bracket"]="TertiaryStatBrackets"},
+	[CR_SPEED]={["conversionFactor"]="SpeedConv",["rating"]="BaseSpeedRating",["bracket"]="TertiaryStatBrackets"},
 }
 
 
@@ -122,13 +161,20 @@ local statIdMap = {
 ]]
 addon.tsv.StatBrackets = {
     {["size"]=30,["penalty"]=0},
-    {["size"]=9,["penalty"]=0.1},
-    {["size"]=8,["penalty"]=0.2},
-    {["size"]=7,["penalty"]=0.3},
-    {["size"]=12,["penalty"]=0.4},
-    {["size"]=60,["penalty"]=0.5},
-    {["size"]=60,["penalty"]=1.0},
+    {["size"]=10,["penalty"]=0.1},
+    {["size"]=10,["penalty"]=0.2},
+    {["size"]=10,["penalty"]=0.3},
+    {["size"]=20,["penalty"]=0.4},
+    {["size"]=120,["penalty"]=0.5},
     {["size"]=100000,["penalty"]=1.0},
+}
+
+addon.tsv.TertiaryStatBrackets = {
+	{["size"]=10,["penalty"]=0},
+	{["size"]=5,["penalty"]=0.2},
+	{["size"]=5,["penalty"]=0.4},
+	{["size"]=80,["penalty"]=0.6},
+	{["size"]=100000,["penalty"]=1.0},
 }
 
 --penatly is the % penalty currently
@@ -143,6 +189,7 @@ function addon.tsv:GetStatDiminishBracket(statId,amount)
 
     local rating = addon[stat.rating];
     local conversionFactor = addon[stat.conversionFactor];
+	local stat_bracket = addon.tsv[stat.bracket];
     local amount = amount or 0;
 
     local percent = (rating+amount) / conversionFactor;
@@ -152,12 +199,12 @@ function addon.tsv:GetStatDiminishBracket(statId,amount)
     local bracket_next_penalty = 0.1;
     local true_rating = 0;
 
-    for i,bracket in ipairs(self.StatBrackets) do
+    for i,bracket in ipairs(stat_bracket) do
         if ( percent < bracket.size ) then
             bracket_rating = math.floor(0.5+percent * conversionFactor);
             bracket_max_rating = math.floor(0.5+bracket.size * conversionFactor);
             bracket_penalty = bracket.penalty;
-            bracket_next_penalty = self.StatBrackets[i+1] and self.StatBrackets[i+1].penalty or 1;
+            bracket_next_penalty = stat_bracket[i+1] and stat_bracket[i+1].penalty or 1;
             true_rating = true_rating + (percent * conversionFactor * (1.0 - bracket.penalty) );
             break;
         else
@@ -176,6 +223,9 @@ function addon.tsv:RecalculateTrueStatRatings()
     addon.BaseHasteRating = GetCombatRating(CR_HASTE_SPELL);
     addon.BaseMasteryRating = GetCombatRating(CR_MASTERY);
     addon.BaseVersatilityRating = GetCombatRating(CR_VERSATILITY_DAMAGE_DONE);
+	addon.BaseLeechRating = GetCombatRating(CR_LIFESTEAL);
+	addon.BaseAvoidanceRating = GetCombatRating(CR_AVOIDANCE);
+	addon.BaseSpeedRating = GetCombatRating(CR_SPEED);
 
     addon.TrueStatInfo = addon.TrueStatInfo or {};
     for statId,stat in pairs(statIdMap) do 
