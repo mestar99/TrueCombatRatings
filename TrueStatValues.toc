@@ -1,7 +1,7 @@
-## Interface: 100207
+## Interface: 110002
 ## Title: True Stat Values
 ## Author: Bastas#6681 (discord)
-## Version: 1.4.0
+## Version: 1.5.0
 ## Notes: Show Secondary-Stat Diminishing Returns in Tooltips.
 ## DefaultState: Enabled
 ## SavedVariables: TSV_DB 
