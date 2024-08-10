@@ -1,0 +1,14 @@
+## Interface: 110002
+## Title: True Combat Ratings
+## Author: mestar99 (discord)
+## Version: 1.5.0
+## Notes: Show Secondary-Stat Diminishing Returns in Tooltips.
+## DefaultState: Enabled
+## SavedVariables: TCR_DB 
+
+embeds.xml
+
+Core.lua
+TrueCombatRatings.lua
+Tooltips.lua
+Events.lua

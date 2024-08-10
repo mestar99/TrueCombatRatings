@@ -59,8 +59,8 @@ local patterns = {
 	[CR_SPEED] = "%s([,0-9]+) " .. STAT_SPEED
 }
 
-function addon.tsv:OnTooltip(ev, tooltip, ...)
-    if (addon.tsv.db.global.showStatTooltips) then
+function addon.tcr:OnTooltip(ev, tooltip, ...)
+    if (addon.tcr.db.global.showStatTooltips) then
         local tt1 = GameTooltipTextLeft1;
         if (tt1) then
             local text = tt1:GetText();
@@ -72,7 +72,7 @@ function addon.tsv:OnTooltip(ev, tooltip, ...)
                             label = label:gsub("%-", "%%-")
                             local s, e = text:find(label)
                             if (s and s <= 11) then
-                                self:AddTrueStatValuesTooltip(tooltip, statId);
+                                self:AddTrueCombatRatingsTooltip(tooltip, statId);
                             end
                         end
                     end
@@ -80,7 +80,7 @@ function addon.tsv:OnTooltip(ev, tooltip, ...)
             end
         end
     end
-    if (addon.tsv.db.global.showItemTooltips and ev == "OnTooltipSetItem") then
+    if (addon.tcr.db.global.showItemTooltips and ev == "OnTooltipSetItem") then
         local name, link = tooltip:GetItem();
 
         if (name ~= nil and link ~= nil) then
@@ -97,9 +97,9 @@ function addon.tsv:OnTooltip(ev, tooltip, ...)
                             local amount = string.match(text, pattern);
                             if (amount) then
                                 local s, e = string.find(text, pattern);
-                                local trueAmount = self:GetTrueStatRatingAdded(statId, amount);
-                                local r, g, b = addon.tsv.db.global.fontColor.r, addon.tsv.db.global.fontColor.g,
-                                    addon.tsv.db.global.fontColor.b;
+                                local trueAmount = self:GetTrueCombatRatingAdded(statId, amount);
+                                local r, g, b = addon.tcr.db.global.fontColor.r, addon.tcr.db.global.fontColor.g,
+                                    addon.tcr.db.global.fontColor.b;
                                 local hexStr = RGBPercToHex(r, g, b);
 
                                 local trueText = text:sub(1, e) .. " |cff" .. hexStr .. "(" .. tostring(trueAmount) ..
@@ -119,13 +119,13 @@ function addon.tsv:OnTooltip(ev, tooltip, ...)
     end
 end
 
-function addon.tsv:AddTrueStatValuesTooltip(tooltip, statId)
+function addon.tcr:AddTrueCombatRatingsTooltip(tooltip, statId)
     local statInfo = addon.TrueStatInfo[statId]; 
     local pctLabel = (statInfo.bracketPenalty > 0) and ("-" .. tostring(statInfo.bracketPenalty * 100) .. "%") or ("0%");
     local barLabel =
         tostring(statInfo.bracketRating) .. "/" .. tostring(statInfo.bracketMaxRating) .. " [" .. pctLabel ..
             " penalty]";
-    local r, g, b = addon.tsv.db.global.fontColor.r, addon.tsv.db.global.fontColor.g, addon.tsv.db.global.fontColor.b;
+    local r, g, b = addon.tcr.db.global.fontColor.r, addon.tcr.db.global.fontColor.g, addon.tcr.db.global.fontColor.b;
 
     -- barLabel = "|cff0000ff"..barLabel.."|r";
     local lostRating = (statInfo.baseRating - statInfo.trueRating);
@@ -146,36 +146,4 @@ function addon.tsv:AddTrueStatValuesTooltip(tooltip, statId)
     tooltip:AddLine("\n");
     tooltip:Show();
 end
-
---[[
-	hooksecurefunc('PaperDollFrame_UpdateStats', function()
-		if IsAddOnLoaded('DejaCharacterStats') then return end
-
-		for _, Table in ipairs({_G.CharacterStatsPane.statsFramePool:EnumerateActive()}) do
-			if type(Table) == 'table' then
-				for statFrame in pairs(Table) do
-					ColorizeStatPane(statFrame)
-					if statFrame.Background:IsShown() then
-						statFrame.leftGrad:Show()
-						statFrame.rightGrad:Show()
-					else
-						statFrame.leftGrad:Hide()
-						statFrame.rightGrad:Hide()
-					end
-				end
-			end
-		end
-	end)
-
-	function PaperDollFrame_SetLabelAndText(statFrame, label, text, isPercentage, numericValue)
-		if ( statFrame.Label ) then
-			statFrame.Label:SetText(format(STAT_FORMAT, label));
-		end
-		if ( isPercentage ) then
-			text = format("%d%%", numericValue + 0.5);
-		end
-		statFrame.Value:SetText(text);
-		statFrame.numericValue = numericValue;
-	end
-]]
 

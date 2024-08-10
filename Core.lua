@@ -1,5 +1,5 @@
 local name,addon = ...;
-local tsv = LibStub("AceAddon-3.0"):NewAddon("TrueStatValues", "AceConsole-3.0", "AceEvent-3.0")
+local tcr = LibStub("AceAddon-3.0"):NewAddon("TrueCombatRatings", "AceConsole-3.0", "AceEvent-3.0")
 
 
 
@@ -31,8 +31,8 @@ Options
 ------------------------------------------------------------------------------]]
 local _TEST=nil;
 local options = {
-	name = "True Stat Values",
-	handler = tsv,
+	name = "True Combat Ratings",
+	handler = tcr,
 	childGroups = "tab",
 	type = "group",
 	args = {
@@ -42,7 +42,7 @@ local options = {
 			order = 1,
 			args = {
 				headerSettings = {
-					name = "True Stat Value Settings",
+					name = "True Combat Ratings Settings",
 					desc = "",
 					type = "header",
 					order = 1
@@ -79,7 +79,7 @@ local options = {
 	}
 }
 local BlizOptionsTable = {
-	name = "True Stat Values",
+	name = "True Combat Ratings",
 	type = "group",
 	args = options
 }
@@ -89,10 +89,10 @@ local BlizOptionsTable = {
 --[[----------------------------------------------------------------------------
 Addon Initialized
 ------------------------------------------------------------------------------]]
-function tsv:OnInitialize()
-    self.db = LibStub("AceDB-3.0"):New("TSV_DB", defaults)
-	LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("TSV_Bliz",options);
-	self.optionsFrame = LibStub("AceConfigDialog-3.0"):AddToBlizOptions("TSV_Bliz", "True Stat Values");
+function tcr:OnInitialize()
+    self.db = LibStub("AceDB-3.0"):New("TCR_DB", defaults)
+	LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("TCR_Bliz",options);
+	self.optionsFrame = LibStub("AceConfigDialog-3.0"):AddToBlizOptions("TCR_Bliz", "True Combat Ratings");
 
 	local tooltipEvents = {
         "OnShow"
@@ -101,7 +101,7 @@ function tsv:OnInitialize()
 	C_Timer.After(0.2,function()
 		for k,v in ipairs(tooltipEvents) do
 			GameTooltip:HookScript(v,function(tooltip,...)
-				tsv:OnTooltip(v,tooltip,...)
+				tcr:OnTooltip(v,tooltip,...)
 			end);
 		end
 	end);
@@ -111,13 +111,13 @@ end
 
 local function OnTooltipSetItem(tooltip, data)
     if tooltip == GameTooltip then
-		tsv:OnTooltip("OnTooltipSetItem", tooltip)
+		tcr:OnTooltip("OnTooltipSetItem", tooltip)
     end
 end
 
 local function OnTooltipSetSpell(tooltip, data)
     if tooltip == GameTooltip then
-		tsv:OnTooltip("OnTooltipSetSpell",tooltip)
+		tcr:OnTooltip("OnTooltipSetSpell",tooltip)
     end
 end
 
@@ -125,4 +125,4 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, OnTooltipSetI
 TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Spell, OnTooltipSetSpell)
 
 addon.SegmentLabels = SegmentLabels;
-addon.tsv = tsv;
+addon.tcr = tcr;
