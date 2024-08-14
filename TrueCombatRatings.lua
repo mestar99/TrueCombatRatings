@@ -257,7 +257,7 @@ function addon.tcr:RecalculateTrueCombatRatings()
 end
 
 function addon.tcr:GetTrueCombatRatingAdded(statId,amountStr)
-    local amountStr = amountStr:gsub(",",""); --numbers are big enough to have commas now
+    local amountStr = string.gsub(amountStr,",",""); --numbers are big enough to have commas now
     local amount = tonumber(amountStr);
     local currentTrueRating = addon.TrueStatInfo[statId].trueRating;
     local addedTrueRating = self:GetStatDiminishBracket(statId,amount);

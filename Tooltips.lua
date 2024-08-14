@@ -13,7 +13,7 @@ local statLabelMap = {
         if (primaryTalentTree) then
             local masterySpell, masterySpell2 = GetSpecializationMasterySpells(primaryTalentTree);
             if (masterySpell) then
-                local name = GetSpellInfo(masterySpell);
+                local name = C_Spell.GetSpellInfo(masterySpell).name;
                 return name;
             end
         end
@@ -69,7 +69,7 @@ function addon.tcr:OnTooltip(ev, tooltip, ...)
                     if (statEventMap[statId] == ev) then
                         local label = labelGenerator();
                         if (label) then
-                            label = label:gsub("%-", "%%-")
+                            label = string.gsub(label,"%-", "%%-")
                             local s, e = text:find(label)
                             if (s and s <= 11) then
                                 self:AddTrueCombatRatingsTooltip(tooltip, statId);
