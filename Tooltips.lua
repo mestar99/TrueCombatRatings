@@ -65,12 +65,17 @@ function addon.tcr:OnTooltip(ev, tooltip, ...)
         if (tt1) then
             local text = tt1:GetText();
             if (text) then
+		--print("text=" .. text)
                 for statId, labelGenerator in pairs(statLabelMap) do
                     if (statEventMap[statId] == ev) then
                         local label = labelGenerator();
                         if (label) then
+			    --print("label1=" .. label)
                             label = string.gsub(label,"%-", "%%-")
+			    --print("label2=" .. label)
                             local s, e = text:find(label)
+			    --if(s) then print("s=" .. s) end
+			    --if(e) then print("e=" .. e) end
                             if (s and s <= 11) then
                                 self:AddTrueCombatRatingsTooltip(tooltip, statId);
                             end
