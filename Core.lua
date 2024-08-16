@@ -99,11 +99,19 @@ function tcr:OnInitialize()
     };
 
 	C_Timer.After(0.2,function()
+		--[[
 		for k,v in ipairs(tooltipEvents) do
 			GameTooltip:HookScript(v,function(tooltip,...)
 				tcr:OnTooltip(v,tooltip,...)
 			end);
 		end
+		]]--
+		PAPERDOLL_STATINFO["CRITCHANCE"] = {
+			updateFunc = function(statFrame, unit)
+				PaperDollFrame_SetCritChance(statFrame, unit);
+				statFrame.tooltip3 = "Hello World";
+			end
+		}
 	end);
 end
 
