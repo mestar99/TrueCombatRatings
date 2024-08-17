@@ -1,7 +1,7 @@
 ## Interface: 110002
 ## Title: True Combat Ratings
 ## Author: mestar99 (discord)
-## Version: 1.5.0
+## Version: 1.6.2
 ## Notes: Show Secondary-Stat Diminishing Returns in Tooltips.
 ## DefaultState: Enabled
 ## SavedVariables: TCR_DB 

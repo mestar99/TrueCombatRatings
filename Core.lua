@@ -53,8 +53,8 @@ local options = {
 					type = "toggle",
 					order = 3,
 					width = "full",
-					get = function(info) return tsv.db.global.showStatTooltips end,
-					set = function(info,val) tsv.db.global.showStatTooltips = val; end
+					get = function(info) return tcr.db.global.showStatTooltips end,
+					set = function(info,val) tcr.db.global.showStatTooltips = val; end
 				},
 				showItemTooltips = {
 					name = "Item Tooltips",
@@ -62,16 +62,16 @@ local options = {
 					type = "toggle",
 					order = 5,
 					width = "full",
-					get = function(info) return tsv.db.global.showItemTooltips end,
-					set = function(info,val) tsv.db.global.showItemTooltips = val; end
+					get = function(info) return tcr.db.global.showItemTooltips end,
+					set = function(info,val) tcr.db.global.showItemTooltips = val; end
                 },
 				fontColor = {
 					name = "Font Color",
 					type = "color",
 					order = 7,
-					get = function(info) return tsv.db.global.fontColor.r,tsv.db.global.fontColor.g,tsv.db.global.fontColor.b,tsv.db.global.fontColor.a end,
+					get = function(info) return tcr.db.global.fontColor.r,tcr.db.global.fontColor.g,tcr.db.global.fontColor.b,tcr.db.global.fontColor.a end,
 					set = function(info,r,g,b,a) 
-						tsv.db.global.fontColor = Color(r,g,b,a); --ignore alpha?
+						tcr.db.global.fontColor = Color(r,g,b,a); --ignore alpha?
 					end
 				},
 			}
